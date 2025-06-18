@@ -1,9 +1,7 @@
-// src/components/OrderCard.jsx
-
 import React from 'react';
 import { Card, Badge, ListGroup } from 'react-bootstrap';
 
-const OrderCard = ({ order }) => {
+const OrderCard = ({ order, onCardClick }) => {
   const getStatusBadgeVariant = (status) => {
     switch (status) {
       case 'Pendente':
@@ -20,7 +18,11 @@ const OrderCard = ({ order }) => {
   };
 
   return (
-    <Card className="mb-3 shadow-sm">
+    <Card 
+      className="mb-3 shadow-sm" 
+      onClick={() => onCardClick(order)} 
+      style={{ cursor: 'pointer' }}
+    >
       <Card.Header className="d-flex justify-content-between align-items-center fw-bold">
         <span>{order.id}</span>
         <Badge pill bg={getStatusBadgeVariant(order.status)} text="dark">
@@ -29,14 +31,9 @@ const OrderCard = ({ order }) => {
       </Card.Header>
       <Card.Body>
         <Card.Title>{order.customerName}</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Itens do Pedido:</Card.Subtitle>
-        <ListGroup variant="flush">
-          {order.items.map((item, index) => (
-            <ListGroup.Item key={index} className="px-0 py-1">
-              {item}
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
+        <Card.Subtitle className="mb-2 text-muted">
+          {order.items.length} {order.items.length > 1 ? 'itens' : 'item'}
+        </Card.Subtitle>
       </Card.Body>
       <Card.Footer className="text-muted d-flex justify-content-between small">
         <span>Loja: {order.store}</span>

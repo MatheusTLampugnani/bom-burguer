@@ -1,12 +1,9 @@
-// src/components/KanbanColumn.jsx
-
 import React from 'react';
 import OrderCard from './OrderCard';
 import { Col, Card } from 'react-bootstrap';
 
-const KanbanColumn = ({ title, orders, color }) => {
+const KanbanColumn = ({ title, orders, color, onCardClick }) => {
   return (
-    // Em telas médias (md) ou maiores, cada coluna ocupará 3 de 12 espaços (totalizando 4 colunas)
     <Col md={3}>
       <Card bg={color} text="white" className="mb-3 shadow-sm">
         <Card.Header as="h5" className="text-center text-capitalize">
@@ -15,7 +12,7 @@ const KanbanColumn = ({ title, orders, color }) => {
       </Card>
       {orders.length > 0 ? (
         orders.map(order => (
-          <OrderCard key={order.id} order={order} />
+          <OrderCard key={order.id} order={order} onCardClick={onCardClick} />
         ))
       ) : (
         <p className="text-center text-muted">Nenhum pedido aqui.</p>

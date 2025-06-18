@@ -1,5 +1,3 @@
-// src/data/mockData.js
-
 export const initialOrders = [
   {
     id: '#A101',
@@ -8,14 +6,17 @@ export const initialOrders = [
     status: 'Pendente',
     store: 'Loja Centro',
     deliveryPerson: null,
-  },
-  {
-    id: '#A102',
-    customerName: 'Mariana Oliveira',
-    items: ['1x X-Salada', '1x Porção de Onion Rings'],
-    status: 'Pendente',
-    store: 'Loja Shopping',
-    deliveryPerson: null,
+    valorTotal: 45.50,
+    dataPedido: new Date(2025, 5, 18, 19, 10, 2).toLocaleString('pt-BR'), // Mês 5 = Junho
+    telefone: '(11) 98765-4321',
+    metodoPagamento: 'Cartão de Crédito via App',
+    endereco: {
+      rua: 'Rua das Flores',
+      numero: '123',
+      bairro: 'Jardim Primavera',
+      cidade: 'São Paulo',
+      cep: '01234-567',
+    }
   },
   {
     id: '#B201',
@@ -24,14 +25,17 @@ export const initialOrders = [
     status: 'Em Preparo',
     store: 'Loja Centro',
     deliveryPerson: null,
-  },
-  {
-    id: '#B202',
-    customerName: 'Ana Costa',
-    items: ['1x Veggie Burger', '1x Suco Natural'],
-    status: 'Em Preparo',
-    store: 'Loja Bairro',
-    deliveryPerson: null,
+    valorTotal: 55.00,
+    dataPedido: new Date(2025, 5, 18, 19, 15, 40).toLocaleString('pt-BR'),
+    telefone: '(21) 91234-5678',
+    metodoPagamento: 'PIX',
+    endereco: {
+      rua: 'Avenida Central',
+      numero: '456',
+      bairro: 'Centro',
+      cidade: 'Rio de Janeiro',
+      cep: '20000-000',
+    }
   },
   {
     id: '#C301',
@@ -40,21 +44,35 @@ export const initialOrders = [
     status: 'Em Rota',
     store: 'Loja Centro',
     deliveryPerson: 'Marcos Andrade',
+    valorTotal: 42.75,
+    dataPedido: new Date(2025, 5, 18, 19, 20, 11).toLocaleString('pt-BR'),
+    telefone: '(31) 98888-7777',
+    metodoPagamento: 'Dinheiro',
+    endereco: {
+      rua: 'Rua dos Inconfidentes',
+      numero: '789',
+      bairro: 'Savassi',
+      cidade: 'Belo Horizonte',
+      cep: '30140-120',
+    }
   },
-    {
+  {
     id: '#D401',
     customerName: 'Fernanda Lima',
     items: ['1x X-Salada', '1x Batata Frita M'],
     status: 'Entregue',
     store: 'Loja Shopping',
     deliveryPerson: 'Lúcia Martins',
-  },
-  {
-    id: '#D402',
-    customerName: 'Gabriel Santos',
-    items: ['1x X-Calabresa', '1x Refrigerante 2L'],
-    status: 'Entregue',
-    store: 'Loja Bairro',
-    deliveryPerson: 'Roberto Dias',
+    valorTotal: 35.00,
+    dataPedido: new Date(2025, 5, 18, 18, 50, 55).toLocaleString('pt-BR'),
+    telefone: '(48) 99999-0000',
+    metodoPagamento: 'Cartão de Débito',
+    endereco: {
+      rua: 'Beira Mar Norte',
+      numero: '1000',
+      bairro: 'Agronômica',
+      cidade: 'Florianópolis',
+      cep: '88025-000',
+    }
   },
 ];
