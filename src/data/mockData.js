@@ -1,0 +1,60 @@
+// src/data/mockData.js
+
+export const initialOrders = [
+  {
+    id: '#A101',
+    customerName: 'Carlos Silva',
+    items: ['1x X-Tudo', '1x Batata Frita G', '1x Refrigerante Lata'],
+    status: 'Pendente',
+    store: 'Loja Centro',
+    deliveryPerson: null,
+  },
+  {
+    id: '#A102',
+    customerName: 'Mariana Oliveira',
+    items: ['1x X-Salada', '1x Porção de Onion Rings'],
+    status: 'Pendente',
+    store: 'Loja Shopping',
+    deliveryPerson: null,
+  },
+  {
+    id: '#B201',
+    customerName: 'João Pereira',
+    items: ['2x X-Bacon', '1x Batata Frita P'],
+    status: 'Em Preparo',
+    store: 'Loja Centro',
+    deliveryPerson: null,
+  },
+  {
+    id: '#B202',
+    customerName: 'Ana Costa',
+    items: ['1x Veggie Burger', '1x Suco Natural'],
+    status: 'Em Preparo',
+    store: 'Loja Bairro',
+    deliveryPerson: null,
+  },
+  {
+    id: '#C301',
+    customerName: 'Ricardo Souza',
+    items: ['1x Duplo Burger', '1x Milkshake'],
+    status: 'Em Rota',
+    store: 'Loja Centro',
+    deliveryPerson: 'Marcos Andrade',
+  },
+    {
+    id: '#D401',
+    customerName: 'Fernanda Lima',
+    items: ['1x X-Salada', '1x Batata Frita M'],
+    status: 'Entregue',
+    store: 'Loja Shopping',
+    deliveryPerson: 'Lúcia Martins',
+  },
+  {
+    id: '#D402',
+    customerName: 'Gabriel Santos',
+    items: ['1x X-Calabresa', '1x Refrigerante 2L'],
+    status: 'Entregue',
+    store: 'Loja Bairro',
+    deliveryPerson: 'Roberto Dias',
+  },
+];
