@@ -46,7 +46,7 @@ git clone https://github.com/MatheusTLampugnani/bom-burguer
 2. **Navegue até o diretório do projeto:**
 
 ```bash
-cd painel-pedidos
+cd bom-burguer
 ```
 
 3. **Instale as dependências do projeto:**
