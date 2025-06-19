@@ -1,10 +1,32 @@
 import React from 'react';
 import { Modal, Button, ListGroup, Row, Col } from 'react-bootstrap';
 
-const OrderDetailModal = ({ order, show, onHide }) => {
+
+const OrderDetailModal = ({ order, show, onHide, onUpdateStatus }) => {
   if (!order) {
     return null;
   }
+
+  const statusMap = {
+    'Pendente': { next: 'Em Preparo', variant: 'primary' },
+    'Em Preparo': { next: 'Em Rota', variant: 'info' },
+    'Em Rota': { next: 'Entregue', variant: 'success' }
+  };
+
+  const getNextStatus = () => {
+    return statusMap[order.status]?.next || null;
+  };
+
+  const getButtonVariant = () => {
+    return statusMap[order.status]?.variant || 'primary';
+  };
+
+  const handleStatusUpdate = () => {
+    const nextStatus = getNextStatus();
+    if (nextStatus) {
+      onUpdateStatus(order.id, nextStatus);
+    }
+  };
 
   return (
     <Modal show={show} onHide={onHide} size="lg" centered>
@@ -42,6 +64,15 @@ const OrderDetailModal = ({ order, show, onHide }) => {
         </Row>
       </Modal.Body>
       <Modal.Footer>
+        {order.status !== 'Entregue' && getNextStatus() && (
+          <Button
+            variant={getButtonVariant()}
+            onClick={handleStatusUpdate}
+            style={{ marginRight: 'auto' }}
+          >
+            Alterar para {getNextStatus()}
+          </Button>
+        )}
         <Button variant="secondary" onClick={onHide}>
           Fechar
         </Button>

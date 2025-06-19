@@ -22,6 +22,15 @@ const AdminPanel = ({ onLogout }) => {
     navigate('/relatorio');
   };
 
+   const handleUpdateStatus = (orderId, newStatus) => {
+    setOrders(prevOrders => 
+      prevOrders.map(order => 
+        order.id === orderId ? { ...order, status: newStatus } : order
+      )
+    );
+    setShowModal(false);
+  };
+
   return (
     <div>
       <div className="d-flex align-items-center justify-content-center my-4">
@@ -71,6 +80,7 @@ const AdminPanel = ({ onLogout }) => {
         show={showModal}
         onHide={handleCloseModal}
         order={selectedOrder}
+        onUpdateStatus={handleUpdateStatus}
       />
     </div>
   );
