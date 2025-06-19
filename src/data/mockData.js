@@ -76,3 +76,11 @@ export const initialOrders = [
     }
   },
 ];
+
+export const mockUsers = [
+  {
+    username: 'admin',
+    password: 'adminpassword',
+    role: 'admin',
+  },
+];
