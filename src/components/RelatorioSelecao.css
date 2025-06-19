@@ -1,0 +1,57 @@
+.relatorio-selecao {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.filtro-entregador {
+  margin: 20px 0;
+}
+
+.filtro-entregador label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.filtro-entregador select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.botao-gerar {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.botao-gerar:hover {
+  background-color: #45a049;
+}
+
+.pdf-page {
+  text-align: center;
+  padding: 2rem;
+}
+
+.download-button {
+  display: inline-block;
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+.download-button:hover {
+  background-color: #0b7dda;
+}

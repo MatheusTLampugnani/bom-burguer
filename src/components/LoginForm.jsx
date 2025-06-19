@@ -1,7 +1,7 @@
 // src/components/LoginForm.jsx
 import React, { useState } from 'react';
 import { Form, Button, Card, Alert } from 'react-bootstrap';
-import { mockUsers } from '../data/mockData'; // Importar os dados mockados
+import { mockUsers } from '../data/mockData'; 
 
 const LoginForm = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState('');
